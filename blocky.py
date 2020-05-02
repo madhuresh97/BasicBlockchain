@@ -12,7 +12,6 @@ class Block:
     next = None
     #4 The hash of this block (serves as a unique ID and verifies its integrity)
     #A hash is a function that converts data into a number within a certain range. 
-    hash = None
     #5 A nonce is a number only used once  
     nonce = 0
     #6 store the hash (ID) of the previous block in the chain
@@ -93,7 +92,7 @@ class Blockchain:
     #the blockchain
     def mine(self, block):
         #from 0 to 2^32 
-        for n in range(self.maxNonce):
+        for n in range (self.maxNonce):
             #is the value of the given block's hash less than our target value?
             if int(block.hash(), 16) <= self.target:
                 #if it is,
